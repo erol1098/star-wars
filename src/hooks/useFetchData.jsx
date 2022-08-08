@@ -11,7 +11,6 @@ const useFetchData = () => {
       try {
         setLoading(true);
         const { data } = await axios.get("https://swapi.dev/api/people");
-        console.log(data.results);
         setPeople(data.results);
       } catch (err) {
         setError(err);

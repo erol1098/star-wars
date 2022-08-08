@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-const TableItem = ({ char: { name, height, gender, films } }) => {
+const TableItem = ({ char: { name, height, gender, films }, onDelete }) => {
   const [filmArr, setFilmArr] = useState([]);
 
   useEffect(() => {
@@ -18,11 +18,11 @@ const TableItem = ({ char: { name, height, gender, films } }) => {
       <td>{height}</td>
       <td>{gender}</td>
       <td>
-        {filmArr.map((film) => (
+        {filmArr?.map((film) => (
           <p>{film}</p>
         ))}
       </td>
-      <td>x</td>
+      <td onClick={() => onDelete(name)}>x</td>
     </tr>
   );
 };

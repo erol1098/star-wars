@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import useFetchData from "../hooks/useFetchData";
 import { StyledTable } from "./styled-components/scHome";
 import TableItem from "./TableItem";
 const RenderTable = () => {
+  const [item, setItem] = useState(null);
   const { people, loading } = useFetchData();
+  const temp = useRef([]);
+  const [updatedPeople, setUpdatedPeople] = useState([]);
+  const [filteredPeople, setFilteredPeople] = useState([]);
+  temp.current = people;
+
+  useEffect(() => {
+    // setUpdatedPeople(people);
+    console.log("item", item);
+    temp.current = temp.current.filter((char) => char.name !== item);
+    setFilteredPeople(temp.current);
+    console.log(temp.current);
+  }, [item]);
+
+  useEffect(() => {
+    setFilteredPeople(people);
+  }, [people]);
+
+  // useEffect(() => {
+  //   setFilteredPeople(updatedPeople.filter((char) => char.name !== item));
+  // }, []);
+
+  console.log("item", item);
+  console.log("people", people);
+  console.log("temp", temp.current);
+  // console.log("updatedPeople", updatedPeople);
+  console.log("filteredPeople", filteredPeople);
   return (
     <>
       <StyledTable>
@@ -23,12 +50,13 @@ const RenderTable = () => {
               <td colSpan={5}> Loading...</td>
             </tr>
           )}
-          {people.map((char) => {
+          {filteredPeople?.map((char) => {
             // console.log("char", char);
             return (
               <TableItem
                 key={Math.trunc(Math.random() * 10000) + 1}
                 char={char}
+                onDelete={setItem}
               />
             );
           })}
