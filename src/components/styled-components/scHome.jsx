@@ -40,3 +40,8 @@ export const StyledTable = styled.table`
     font-weight: bold;
   }
 `;
+export const StyledSearchBar = styled.form`
+  width: 100%;
+  height: 5rem;
+  background-color: gray;
+`;
