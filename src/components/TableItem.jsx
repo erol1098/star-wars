@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 const TableItem = ({ char: { name, height, gender, films }, onDelete }) => {
   const [filmArr, setFilmArr] = useState([]);
-
+  const [show, setShow] = useState(false);
   useEffect(() => {
     films.map((url) =>
       (async () => {
@@ -18,9 +18,8 @@ const TableItem = ({ char: { name, height, gender, films }, onDelete }) => {
       <td>{height}</td>
       <td>{gender}</td>
       <td>
-        {filmArr?.map((film) => (
-          <p>{film}</p>
-        ))}
+        <button onClick={() => setShow((prev) => !prev)}>Show Films</button>
+        <span>{show && filmArr?.map((film) => <p key={film}>{film}</p>)}</span>
       </td>
       <td onClick={() => onDelete(name)}>x</td>
     </tr>
