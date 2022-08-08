@@ -1,11 +1,16 @@
 import React from "react";
 import { StyledSearchBar } from "./styled-components/scHome";
 
-const SearchBar = ({ gender, setGender }) => {
+const SearchBar = ({ gender, setGender, query, setQuery }) => {
   return (
     <StyledSearchBar>
       <div>Search Bar</div>
-      <input type={"search"} placeholder={"Search for a keyword..."} />
+      <input
+        type={"search"}
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder={"Search for a keyword..."}
+      />
       <select
         value={gender}
         onChange={(e) => setGender(e.target.value)}

@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import useFetchData from "../hooks/useFetchData";
 import { StyledTable } from "./styled-components/scHome";
 import TableItem from "./TableItem";
-const RenderTable = ({ gender }) => {
+const RenderTable = ({ gender, query }) => {
   const [item, setItem] = useState(null);
   const { people, loading } = useFetchData();
   const [updatedPeople, setUpdatedPeople] = useState([]);
   const [filtered, setFiltered] = useState([]);
   useEffect(() => {
-    // setUpdatedPeople(people);
     setUpdatedPeople((prevPeople) =>
       prevPeople.filter((char) => char.name !== item)
     );
@@ -20,11 +19,13 @@ const RenderTable = ({ gender }) => {
 
   useEffect(() => {
     setFiltered(
-      updatedPeople.filter((char) =>
-        gender === "all" ? true : char.gender === gender
-      )
+      updatedPeople
+        .filter((char) => (gender === "all" ? true : char.gender === gender))
+        .filter((char) => {
+          return char.name.toLowerCase().includes(query.toLowerCase());
+        })
     );
-  }, [updatedPeople, gender]);
+  }, [updatedPeople, gender, query]);
 
   // console.log("item", item);
   // console.log("people", people);
@@ -59,6 +60,11 @@ const RenderTable = ({ gender }) => {
               />
             );
           })}
+          {!filtered.length && (
+            <tr>
+              <td colSpan={5}> No Item Found!</td>
+            </tr>
+          )}
         </tbody>
       </StyledTable>
     </>
