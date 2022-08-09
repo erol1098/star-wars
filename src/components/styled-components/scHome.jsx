@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Background from "../../assets/background.jpg";
 import Enter from "../../assets/enter.jpg";
+import SearchIcon from "../../assets/search.png";
 import { createGlobalStyle } from "styled-components";
 import Starjedi from "../../assets/fonts/starjedi/Starjedi.ttf";
 
@@ -13,9 +14,7 @@ export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Star Jedi';
     src: url(${Starjedi});
-   
   }
-
 `;
 
 export const StyledHome = styled.main`
@@ -42,22 +41,20 @@ export const StyledTable = styled.table`
   border-collapse: collapse;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  td,
-  th {
-    border: none;
-  }
 
   td {
     padding: 5px 10px;
     text-align: center;
     padding: 1rem 0;
+    border: none;
   }
   thead {
     display: block;
     width: 100%;
   }
   tbody {
-    height: 23rem;
+    /* height: 23rem; */
+    height: 50vh;
     display: block;
     width: 100%;
     overflow: auto;
@@ -87,14 +84,12 @@ export const StyledTable = styled.table`
     background-color: rgb(0, 0, 0, 0.8);
     color: #ffe919;
     border-bottom: none;
-    /* #32E246 */
-    /* #FF0C08 */
-    /* #D725EC */
     & th {
       padding: 1.5rem 0;
       min-width: 10rem;
       font-size: 1.3rem;
       letter-spacing: 0.2rem;
+      border: none;
     }
   }
   caption {
@@ -116,13 +111,19 @@ export const StyledTable = styled.table`
   }
 `;
 export const StyledSearchBar = styled.form`
-  width: 100%;
-  padding: 2rem 0;
+  margin-top: 1rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
   input {
+    background-image: url(${SearchIcon});
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
     height: 3rem;
     width: 20rem;
     text-indent: 1rem;
@@ -130,7 +131,7 @@ export const StyledSearchBar = styled.form`
     font-family: "Star Jedi";
     border: none;
     border-radius: 0.3rem;
-    padding-inline: 1rem;
+    padding-inline: 2rem;
     &:focus {
       outline: none;
     }
@@ -142,6 +143,7 @@ export const StyledSearchBar = styled.form`
     font-size: 0.9rem;
     text-indent: 0.5rem;
     border-radius: 0.3rem;
+    padding: 0 0.5rem;
   }
 `;
 
@@ -199,7 +201,8 @@ export const EnterButton = styled.button`
 export const StyledDetailModal = styled.section`
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+
+  background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0;
   left: 0;
@@ -207,17 +210,21 @@ export const StyledDetailModal = styled.section`
   align-items: center;
   justify-content: center;
   section {
-    background-color: gray;
+    background-color: #eee;
     width: 50%;
     height: 50%;
     padding: 1rem;
-    border: 1px solid red;
+    border-radius: 0.3rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
     img {
       width: 30%;
+      height: 90%;
+      border-radius: 0.3rem;
     }
     div {
       width: 70%;

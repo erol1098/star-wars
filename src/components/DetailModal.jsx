@@ -26,9 +26,9 @@ const DetailModal = ({ detailName, onShow }) => {
       <section>
         <img src={people?.image} alt={people?.name} />
         <div>
-          <h2>Name: {people?.name}</h2>
-          <h3>Homeworld: {people?.homeworld}</h3>
-          <h4>Species: {people?.species}</h4>
+          <h2>Name: {people?.name.toLowerCase()}</h2>
+          <h3>Homeworld: {people?.homeworld.toLowerCase()}</h3>
+          <h4>Species: {people?.species.toLowerCase()}</h4>
         </div>
       </section>
     </StyledDetailModal>
