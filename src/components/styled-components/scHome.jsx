@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import background from "../../assets/background.jpg";
 import { createGlobalStyle } from "styled-components";
-import STJEDISE from "../../assets/fonts/Star-Jedi Special Edition/STJEDISE.TTF";
+import Starjedi from "../../assets/fonts/starjedi/Starjedi.ttf";
+
 export const GlobalStyle = createGlobalStyle`
 *{
   margin:0;
@@ -9,11 +10,9 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing:border-box;
 }
   @font-face {
-    font-family: 'StarJedi Special Edition';
-    src: url(${STJEDISE}) format('truetype');
-    font-weight: 300;
-    font-style: normal;
-    font-display: auto;
+    font-family: 'Star Jedi';
+    src: url(${Starjedi});
+   
   }
 
 `;
@@ -25,8 +24,7 @@ export const StyledHome = styled.main`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: green;
-  border: 1px solid red;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -35,11 +33,14 @@ export const StyledHome = styled.main`
 `;
 
 export const StyledTable = styled.table`
-  font-family: "StarJedi Special Edition";
+  font-family: "Star Jedi";
+  font-size: 1.1rem;
+  letter-spacing: 0.05rem;
   width: 80%;
   caption-side: top;
-  border: 3px solid #888;
   border-collapse: collapse;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   td,
   th {
     border: none;
@@ -80,12 +81,18 @@ export const StyledTable = styled.table`
     table-layout: fixed;
   }
   thead {
-    background-color: #000;
-    color: yellow;
-
+    background-color: rgb(0, 0, 0, 0.8);
+    color: #ffe919;
+    /* border: 3px solid rgb(255, 12, 8, 0.4); */
+    border-bottom: none;
+    /* #32E246 */
+    /* #FF0C08 */
+    /* #D725EC */
     & th {
       padding: 1.5rem 0;
       min-width: 10rem;
+      font-size: 1.3rem;
+      letter-spacing: 0.2rem;
     }
   }
   caption {
@@ -104,8 +111,7 @@ export const StyledTable = styled.table`
 export const StyledSearchBar = styled.form`
   width: 100%;
   padding: 2rem 0;
-  background-color: rgb(128, 128, 128, 0.5);
-
+  background-color: rgb(215, 37, 236, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,9 +120,11 @@ export const StyledSearchBar = styled.form`
     height: 3rem;
     width: 20rem;
     text-indent: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-family: "Star Jedi";
+
     border: none;
-    border-radius: 1rem;
+    border-radius: 0.3rem;
     padding-inline: 1rem;
     &:focus {
       outline: none;
@@ -124,8 +132,20 @@ export const StyledSearchBar = styled.form`
   }
 
   select {
+    font-family: "Star Jedi";
+
     height: 3rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-indent: 0.5rem;
+    border-radius: 0.3rem;
   }
+`;
+
+export const Button = styled.button`
+  padding: 1rem 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-family: "Star Jedi";
+  cursor: pointer;
 `;

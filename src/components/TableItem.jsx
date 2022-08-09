@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { MdDelete } from "react-icons/md";
+import { Button } from "./styled-components/scHome";
 const TableItem = ({
   char: { name, height, gender, films, homeworld },
   onDelete,
@@ -45,14 +46,14 @@ const TableItem = ({
 
   return (
     <tr>
-      <td>{name}</td>
+      <td>{name.toLowerCase()}</td>
       <td>{height}</td>
       <td>{gender}</td>
       {!loading && (
         <td>
-          <button onClick={handleShow}>
+          <Button onClick={handleShow}>
             {show ? "Hide Films" : "Show Films"}
-          </button>
+          </Button>
 
           {show && (
             <span>
