@@ -27,20 +27,17 @@ const RenderTable = ({ gender, query }) => {
     );
   }, [updatedPeople, gender, query]);
 
-  // console.log("item", item);
-  // console.log("people", people);
-  // console.log("updatedPeople", updatedPeople);
-  console.log("filtered", filtered);
   return (
     <>
       <StyledTable>
-        <caption>Star Wars Characters</caption>
+        {/* <caption>Star Wars Characters</caption> */}
         <thead>
           <tr>
             <th>Name</th>
-            <th>Height</th>
+            <th>Height (cm)</th>
             <th>Gender</th>
             <th>Films</th>
+            <th>Homeworld</th>
             <th>Delete</th>
           </tr>
         </thead>
@@ -50,16 +47,13 @@ const RenderTable = ({ gender, query }) => {
               <td colSpan={5}> Loading...</td>
             </tr>
           )}
-          {filtered?.map((char) => {
-            // console.log("char", char);
-            return (
-              <TableItem
-                key={Math.trunc(Math.random() * 10000) + 1}
-                char={char}
-                onDelete={setItem}
-              />
-            );
-          })}
+          {filtered?.map((char) => (
+            <TableItem
+              key={Math.trunc(Math.random() * 10000) + 1}
+              char={char}
+              onDelete={setItem}
+            />
+          ))}
           {!filtered.length && (
             <tr>
               <td colSpan={5}> No Item Found!</td>

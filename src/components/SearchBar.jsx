@@ -4,7 +4,6 @@ import { StyledSearchBar } from "./styled-components/scHome";
 const SearchBar = ({ gender, setGender, query, setQuery }) => {
   return (
     <StyledSearchBar>
-      <div>Search Bar</div>
       <input
         type={"search"}
         value={query}
