@@ -19,18 +19,19 @@ const DetailModal = ({ detailName, onShow }) => {
       }
     })();
   }, [detailName]);
-  console.log(people);
-
   return (
     <StyledDetailModal onClick={() => onShow(false)}>
-      <section>
-        <img src={people?.image} alt={people?.name} />
-        <div>
-          <h2>Name: {people?.name.toLowerCase()}</h2>
-          <h3>Homeworld: {people?.homeworld.toLowerCase()}</h3>
-          <h4>Species: {people?.species.toLowerCase()}</h4>
-        </div>
-      </section>
+      {loading && <p>Loading...</p>}
+      {!loading && (
+        <section>
+          <img src={people?.image} alt={people?.name} />
+          <div>
+            <h2>Name: {people?.name?.toLowerCase()}</h2>
+            <h3>Homeworld: {people?.homeworld?.toLowerCase()}</h3>
+            <h4>Species: {people?.species?.toLowerCase()}</h4>
+          </div>
+        </section>
+      )}
     </StyledDetailModal>
   );
 };

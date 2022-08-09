@@ -49,7 +49,8 @@ const RenderTable = ({ gender, query }) => {
           )}
           {filtered?.map((char) => (
             <TableItem
-              key={Math.trunc(Math.random() * 10000) + 1}
+              // key={Math.trunc(Math.random() * 10000) + 1}
+              key={char.created}
               char={char}
               onDelete={setItem}
             />

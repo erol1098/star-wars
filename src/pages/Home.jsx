@@ -12,9 +12,6 @@ class Home extends React.Component {
       isLogin: false,
     };
   }
-  componentDidMount() {
-    console.log("object");
-  }
   setGender = (item) => {
     this.setState({ gender: item });
   };
