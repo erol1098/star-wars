@@ -105,7 +105,12 @@ export const StyledTable = styled.table`
     color: yellow;
   }
   .delete-icon {
-    color: red;
+    color: #ff0c08;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .detail-icon {
+    color: #d725ec;
     font-size: 1.5rem;
     cursor: pointer;
   }
@@ -113,7 +118,6 @@ export const StyledTable = styled.table`
 export const StyledSearchBar = styled.form`
   width: 100%;
   padding: 2rem 0;
-  /* background-color: rgb(215, 37, 236, 0.4); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,7 +128,6 @@ export const StyledSearchBar = styled.form`
     text-indent: 1rem;
     font-size: 1rem;
     font-family: "Star Jedi";
-
     border: none;
     border-radius: 0.3rem;
     padding-inline: 1rem;
@@ -135,9 +138,8 @@ export const StyledSearchBar = styled.form`
 
   select {
     font-family: "Star Jedi";
-
     height: 3rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-indent: 0.5rem;
     border-radius: 0.3rem;
   }
@@ -193,4 +195,32 @@ export const EnterButton = styled.button`
   border-radius: 0.5rem;
   border: none;
   cursor: pointer;
+`;
+export const StyledDetailModal = styled.section`
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  section {
+    background-color: gray;
+    width: 50%;
+    height: 50%;
+    padding: 1rem;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    img {
+      width: 30%;
+    }
+    div {
+      width: 70%;
+    }
+  }
 `;

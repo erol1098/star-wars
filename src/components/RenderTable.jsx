@@ -35,9 +35,10 @@ const RenderTable = ({ gender, query }) => {
           <tr>
             <th>Name</th>
             <th>Height (cm)</th>
+            <th>Mass (kg)</th>
             <th>Gender</th>
             <th>Films</th>
-            <th>Homeworld</th>
+            {/* <th>Homeworld</th> */}
             <th>Actions</th>
           </tr>
         </thead>
