@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import background from "../../assets/background.jpg";
+import Background from "../../assets/background.jpg";
+import Enter from "../../assets/enter.jpg";
 import { createGlobalStyle } from "styled-components";
 import Starjedi from "../../assets/fonts/starjedi/Starjedi.ttf";
 
@@ -20,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
 export const StyledHome = styled.main`
   width: 100%;
   height: 100vh;
-  background: url(${background});
+  background: url(${Background});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -56,10 +57,11 @@ export const StyledTable = styled.table`
     width: 100%;
   }
   tbody {
-    height: 20rem;
+    height: 23rem;
     display: block;
     width: 100%;
     overflow: auto;
+    font-size: 0.9rem;
   }
 
   tbody tr {
@@ -79,11 +81,11 @@ export const StyledTable = styled.table`
     display: table;
     width: 100%;
     table-layout: fixed;
+    color: #222;
   }
   thead {
     background-color: rgb(0, 0, 0, 0.8);
     color: #ffe919;
-    /* border: 3px solid rgb(255, 12, 8, 0.4); */
     border-bottom: none;
     /* #32E246 */
     /* #FF0C08 */
@@ -111,7 +113,7 @@ export const StyledTable = styled.table`
 export const StyledSearchBar = styled.form`
   width: 100%;
   padding: 2rem 0;
-  background-color: rgb(215, 37, 236, 0.4);
+  /* background-color: rgb(215, 37, 236, 0.4); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,5 +149,48 @@ export const Button = styled.button`
   border-radius: 0.5rem;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   font-family: "Star Jedi";
+  font-size: 0.7rem;
+  cursor: pointer;
+  background-color: #32e246;
+  color: #444;
+`;
+
+export const StyledLogin = styled.div`
+  /* ... */
+  width: 100vw;
+  height: 100vh;
+  background: url(${Enter});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 3rem;
+  padding-bottom: 10rem;
+  h1 {
+    color: white;
+    text-align: center;
+    margin-top: 10rem;
+  }
+  & div {
+    display: flex;
+    gap: 2rem;
+  }
+`;
+
+export const EnterButton = styled.button`
+  /* ... */
+  padding: 3rem;
+  font-size: 2rem;
+  font-family: "Star Jedi";
+  background-color: ${(props) => props.bgColor};
+  color: ${(props) => props.color};
+
+  border-radius: 0.5rem;
+  border: none;
   cursor: pointer;
 `;

@@ -56,7 +56,7 @@ const RenderTable = ({ gender, query }) => {
           ))}
           {!filtered.length && (
             <tr>
-              <td colSpan={5}> No Item Found!</td>
+              <td colSpan={5}> No item Found!</td>
             </tr>
           )}
         </tbody>
