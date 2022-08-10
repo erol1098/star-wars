@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import useFetchData from "../hooks/useFetchData";
 import { StyledTable } from "./styled-components/scHome";
 import TableItem from "./TableItem";
-const RenderTable = ({ gender, query }) => {
+const RenderTable = ({ gender, query, side }) => {
   const [item, setItem] = useState(null);
   const { people, loading } = useFetchData();
   const [updatedPeople, setUpdatedPeople] = useState([]);
@@ -30,7 +30,11 @@ const RenderTable = ({ gender, query }) => {
   return (
     <>
       <StyledTable>
-        {/* <caption>Star Wars Characters</caption> */}
+        <caption>
+          {side
+            ? "May the Force be with you".toLowerCase()
+            : "If Once You Start Down The Dark Path,\n Forever Will It Dominate Your Destiny".toLowerCase()}
+        </caption>
         <thead>
           <tr>
             <th>Name</th>
@@ -48,12 +52,7 @@ const RenderTable = ({ gender, query }) => {
             </tr>
           )}
           {filtered?.map((char) => (
-            <TableItem
-              // key={Math.trunc(Math.random() * 10000) + 1}
-              key={char.created}
-              char={char}
-              onDelete={setItem}
-            />
+            <TableItem key={char.created} char={char} onDelete={setItem} />
           ))}
           {!filtered.length && (
             <tr>

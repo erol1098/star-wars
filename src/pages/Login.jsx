@@ -4,22 +4,28 @@ import {
   EnterButton,
 } from "../components/styled-components/scHome";
 
-const Login = ({ setIsLogin }) => {
+const Login = ({ setIsLogin, onSide }) => {
   return (
     <StyledLogin>
-      <h1>Choose Your Side</h1>
+      <h1>star wars</h1>
       <div>
         <EnterButton
           bgColor="#FF0C08"
           color="#000"
-          onClick={() => setIsLogin()}
+          onClick={() => {
+            onSide(false);
+            setIsLogin();
+          }}
         >
           Dark Side
         </EnterButton>
         <EnterButton
           bgColor="#32e246"
           color="#fff"
-          onClick={() => setIsLogin()}
+          onClick={() => {
+            onSide(true);
+            setIsLogin();
+          }}
         >
           Light Side
         </EnterButton>

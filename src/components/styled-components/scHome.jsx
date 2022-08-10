@@ -29,7 +29,7 @@ export const StyledHome = styled.main`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 3rem;
+  gap: 1rem;
 `;
 
 export const StyledTable = styled.table`
@@ -53,7 +53,6 @@ export const StyledTable = styled.table`
     width: 100%;
   }
   tbody {
-    /* height: 23rem; */
     height: 50vh;
     display: block;
     width: 100%;
@@ -163,6 +162,7 @@ export const StyledLogin = styled.div`
   /* ... */
   width: 100vw;
   height: 100vh;
+  font-family: "Star Jedi";
   background: url(${Enter});
   background-position: center;
   background-repeat: no-repeat;
@@ -176,7 +176,8 @@ export const StyledLogin = styled.div`
   gap: 3rem;
   padding-bottom: 10rem;
   h1 {
-    color: white;
+    color: #ffe919;
+    font-size: 5rem;
     text-align: center;
     margin-top: 10rem;
   }
@@ -228,6 +229,11 @@ export const StyledDetailModal = styled.section`
     }
     div {
       width: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
     }
   }
 `;
