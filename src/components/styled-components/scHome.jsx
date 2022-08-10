@@ -45,9 +45,13 @@ export const StyledTable = styled.table`
   width: 80%;
   caption-side: top;
   border-collapse: collapse;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-
+  border-radius: 1rem;
+  box-shadow: inset 0 0 4px hsl(${(props) => props.shadow} 100% 50% / 1),
+    0 0 1em hsl(${(props) => props.shadow} 100% 50% / 0.8),
+    0 0 1.5em hsl(${(props) => props.shadow} 100% 50% / 0.7),
+    0 0 2em hsl(${(props) => props.shadow} 100% 50% / 0.5),
+    0 0 3em hsl(${(props) => props.shadow} 100% 50% / 0.3),
+    0 0 5em hsl(${(props) => props.shadow} 100% 50% / 0.2);
   td {
     padding: 5px 10px;
     text-align: center;
@@ -57,6 +61,7 @@ export const StyledTable = styled.table`
   thead {
     display: block;
     width: 100%;
+    border-radius: 1rem 1rem 0 0;
   }
   tbody {
     height: 50vh;
@@ -64,6 +69,7 @@ export const StyledTable = styled.table`
     width: 100%;
     overflow: auto;
     font-size: 0.9rem;
+    border-radius: 0 0 1rem 1rem;
   }
 
   tbody tr {
@@ -77,7 +83,6 @@ export const StyledTable = styled.table`
       background-color: #ccc;
     }
   }
-
   thead,
   tbody tr {
     display: table;
@@ -134,6 +139,7 @@ export const StyledSearchBar = styled.form`
   align-items: center;
   gap: 1rem;
   background-color: rgba(0, 0, 0, 0.8);
+
   input {
     background-image: url(${SearchIcon});
     background-position: left;
@@ -204,24 +210,33 @@ export const StyledLogin = styled.div`
     display: flex;
     gap: 4rem;
   }
+
+  /* box-shadow: inset 0 0 4px hsl(195 100% 50% / 1),
+      0 0 1em hsl(195 100% 50% / 0.8), 0 0 1.5em hsl(195 100% 50% / 0.7),
+      0 0 2em hsl(195 100% 50% / 0.5), 0 0 3em hsl(195 100% 50% / 0.3),
+      0 0 5em hsl(195 100% 50% / 0.2); */
 `;
 
 export const EnterButton = styled.button`
   /* ... */
-  padding: 3rem;
+  padding: 0.5rem 3rem;
   font-size: 2rem;
   font-family: ${(props) => props.font};
   background-color: ${(props) => props.bgColor};
   color: ${(props) => props.color};
-  box-shadow: ${(props) => props.borColor} 0px 0px 40px 5px,
-    ${(props) => props.borColor} 0px 0px 40px 5px;
-  border-radius: 0.5rem;
+  box-shadow: inset 0 0 4px hsl(${(props) => props.borColor} 100% 50% / 1),
+    0 0 1em hsl(${(props) => props.borColor} 100% 50% / 0.8),
+    0 0 1.5em hsl(${(props) => props.borColor} 100% 50% / 0.7),
+    0 0 2em hsl(${(props) => props.borColor} 100% 50% / 0.5),
+    0 0 3em hsl(${(props) => props.borColor} 100% 50% / 0.3),
+    0 0 5em hsl(${(props) => props.borColor} 100% 50% / 0.2);
+  border-radius: 1rem;
   border: none;
   cursor: pointer;
   transition: all 1s;
   &:hover {
     transform: scale(1.1);
-    background-color: ${(props) => props.borColor};
+    background-color: hsl(${(props) => props.borColor} 100% 50% / 0.9);
   }
 `;
 export const StyledDetailModal = styled.section`
@@ -240,9 +255,11 @@ export const StyledDetailModal = styled.section`
     width: 50%;
     height: 50%;
     padding: 1rem;
-    border-radius: 0.3rem;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 1rem;
+    box-shadow: inset 0 0 4px hsl(60 100% 50% / 1),
+      0 0 1em hsl(60 100% 50% / 0.8), 0 0 1.5em hsl(60 100% 50% / 0.7),
+      0 0 2em hsl(60 100% 50% / 0.5), 0 0 3em hsl(60 100% 50% / 0.3),
+      0 0 5em hsl(60 100% 50% / 0.2);
     display: flex;
     justify-content: center;
     align-items: center;

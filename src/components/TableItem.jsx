@@ -5,7 +5,7 @@ import { BiDetail } from "react-icons/bi";
 import { Button } from "./styled-components/scHome";
 import DetailModal from "./DetailModal";
 const TableItem = ({
-  char: { name, height, gender, films, homeworld, mass },
+  char: { name, height, gender, films, mass },
   onDelete,
 }) => {
   const [filmArr, setFilmArr] = useState([]);

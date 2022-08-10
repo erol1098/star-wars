@@ -12,7 +12,8 @@ const Login = ({ setIsLogin, onSide }) => {
         <EnterButton
           bgColor="#DCF8FB"
           color="#000"
-          borColor="#D90502"
+          borColor="360"
+          // borColor="#d90502"
           font="Star Jedi"
           onClick={() => {
             onSide(false);
@@ -24,7 +25,7 @@ const Login = ({ setIsLogin, onSide }) => {
         <EnterButton
           bgColor="#E3FFFF"
           color="#000"
-          borColor="#4EFD5E"
+          borColor="195"
           font="Star Jedi"
           onClick={() => {
             onSide(true);

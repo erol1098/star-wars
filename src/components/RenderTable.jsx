@@ -26,15 +26,15 @@ const RenderTable = ({ gender, query, side }) => {
         })
     );
   }, [updatedPeople, gender, query]);
-
+  console.log("loading", loading);
   return (
     <>
-      <StyledTable>
-        <caption>
+      <StyledTable shadow={side ? "195" : "360"}>
+        {/* <caption>
           {side
             ? "May the Force be with you".toLowerCase()
             : "If Once You Start Down The Dark Path,\n Forever Will It Dominate Your Destiny".toLowerCase()}
-        </caption>
+        </caption> */}
         <thead>
           <tr>
             <th>Name</th>
@@ -54,7 +54,7 @@ const RenderTable = ({ gender, query, side }) => {
           {filtered?.map((char) => (
             <TableItem key={char.created} char={char} onDelete={setItem} />
           ))}
-          {!filtered.length && (
+          {!loading && !filtered.length && (
             <tr>
               <td colSpan={5}> No item Found!</td>
             </tr>
