@@ -4,6 +4,7 @@ import Enter from "../../assets/enter.jpg";
 import SearchIcon from "../../assets/search.png";
 import { createGlobalStyle } from "styled-components";
 import Starjedi from "../../assets/fonts/starjedi/Starjedi.ttf";
+import StarJediHollow from "../../assets/fonts/Starjhol.ttf";
 
 export const GlobalStyle = createGlobalStyle`
 *{
@@ -14,6 +15,11 @@ export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Star Jedi';
     src: url(${Starjedi});
+  }
+
+  @font-face {
+    font-family: 'Star Jedi Hollow';
+    src: url(${StarJediHollow});
   }
 `;
 
@@ -82,6 +88,7 @@ export const StyledTable = styled.table`
   thead {
     background-color: rgb(0, 0, 0, 0.8);
     color: #ffe919;
+
     border-bottom: none;
     & th {
       padding: 1.5rem 0;
@@ -97,16 +104,25 @@ export const StyledTable = styled.table`
     font-weight: bold;
     background-color: black;
     color: yellow;
+    font-family: "Star Jedi Hollow";
   }
   .delete-icon {
     color: #ff0c08;
     font-size: 1.5rem;
     cursor: pointer;
+    transition: transform 1s;
+    &:hover {
+      transform: scale(1.5);
+    }
   }
   .detail-icon {
     color: #d725ec;
     font-size: 1.5rem;
     cursor: pointer;
+    transition: transform 1s;
+    &:hover {
+      transform: scale(1.5);
+    }
   }
 `;
 export const StyledSearchBar = styled.form`
@@ -148,14 +164,17 @@ export const StyledSearchBar = styled.form`
 
 export const Button = styled.button`
   padding: 1rem 0.5rem;
-  border: none;
   border-radius: 0.5rem;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: #4efd5e 0px 0px 5px;
   font-family: "Star Jedi";
   font-size: 0.7rem;
   cursor: pointer;
-  background-color: #32e246;
+  border: 3px solid #4efd5e;
   color: #444;
+  transition: transform 1s;
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 export const StyledLogin = styled.div`
@@ -183,7 +202,7 @@ export const StyledLogin = styled.div`
   }
   & div {
     display: flex;
-    gap: 2rem;
+    gap: 4rem;
   }
 `;
 
@@ -191,13 +210,19 @@ export const EnterButton = styled.button`
   /* ... */
   padding: 3rem;
   font-size: 2rem;
-  font-family: "Star Jedi";
+  font-family: ${(props) => props.font};
   background-color: ${(props) => props.bgColor};
   color: ${(props) => props.color};
-
+  box-shadow: ${(props) => props.borColor} 0px 0px 40px 5px,
+    ${(props) => props.borColor} 0px 0px 40px 5px;
   border-radius: 0.5rem;
   border: none;
   cursor: pointer;
+  transition: all 1s;
+  &:hover {
+    transform: scale(1.1);
+    background-color: ${(props) => props.borColor};
+  }
 `;
 export const StyledDetailModal = styled.section`
   width: 100%;

@@ -10,24 +10,28 @@ const Login = ({ setIsLogin, onSide }) => {
       <h1>star wars</h1>
       <div>
         <EnterButton
-          bgColor="#FF0C08"
+          bgColor="#DCF8FB"
           color="#000"
+          borColor="#D90502"
+          font="Star Jedi"
           onClick={() => {
             onSide(false);
             setIsLogin();
           }}
         >
-          Dark Side
+          sith order
         </EnterButton>
         <EnterButton
-          bgColor="#32e246"
-          color="#fff"
+          bgColor="#E3FFFF"
+          color="#000"
+          borColor="#4EFD5E"
+          font="Star Jedi"
           onClick={() => {
             onSide(true);
             setIsLogin();
           }}
         >
-          Light Side
+          jedi order
         </EnterButton>
       </div>
     </StyledLogin>
