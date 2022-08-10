@@ -11,6 +11,7 @@ class Home extends React.Component {
       query: "",
       isLogin: false,
       side: "",
+      page: 1,
     };
   }
   setGender = (item) => {
@@ -25,6 +26,9 @@ class Home extends React.Component {
   setSide = (item) => {
     this.setState({ side: item });
   };
+  setPage = (item) => {
+    this.setState({ page: item });
+  };
   render() {
     if (this.state.isLogin) {
       return (
@@ -34,11 +38,13 @@ class Home extends React.Component {
             query={this.state.query}
             setGender={this.setGender}
             setQuery={this.setQuery}
+            setPage={this.setPage}
           />
           <RenderTable
             gender={this.state.gender}
             query={this.state.query}
             side={this.state.side}
+            page={this.state.page}
           />
         </>
       );

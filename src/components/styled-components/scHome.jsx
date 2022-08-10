@@ -161,6 +161,7 @@ export const StyledSearchBar = styled.form`
   select {
     font-family: "Star Jedi";
     height: 3rem;
+    width: 7rem;
     font-size: 0.9rem;
     text-indent: 0.5rem;
     border-radius: 0.3rem;
