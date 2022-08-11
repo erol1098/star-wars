@@ -52,7 +52,7 @@ const RenderTable = ({ gender, query, side, page }) => {
             <TableItem key={char.created} char={char} onDelete={setItem} />
           ))}
           {!loading && !filtered.length && (
-            <tr colSpan={5} style={{ height: "50vh" }}>
+            <tr colSpan={5}>
               <td>
                 <h2>No item Found!</h2>
               </td>

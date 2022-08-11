@@ -4,6 +4,7 @@ import { MdDelete } from "react-icons/md";
 import { BiDetail } from "react-icons/bi";
 import { Button } from "./styled-components/scHome";
 import DetailModal from "./DetailModal";
+import { SpinnerCircularFixed } from "spinners-react";
 const TableItem = ({
   char: { name, height, gender, films, mass },
   onDelete,
@@ -52,7 +53,11 @@ const TableItem = ({
             )}
           </td>
         )}
-        {loading && <td>Loading...</td>}
+        {loading && (
+          <td>
+            <SpinnerCircularFixed />
+          </td>
+        )}
         <td>
           <BiDetail
             className="detail-icon"

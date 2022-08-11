@@ -64,7 +64,7 @@ export const StyledTable = styled.table`
     border-radius: 1rem 1rem 0 0;
   }
   tbody {
-    height: 50vh;
+    max-height: 50vh;
     display: block;
     width: 100%;
     overflow: auto;
@@ -166,6 +166,7 @@ export const StyledSearchBar = styled.form`
     text-indent: 0.5rem;
     border-radius: 0.3rem;
     padding: 0 0.5rem;
+    cursor: pointer;
   }
 `;
 
@@ -176,7 +177,6 @@ export const Button = styled.button`
   font-family: "Star Jedi";
   font-size: 0.7rem;
   cursor: pointer;
-  /* border: 3px solid #4efd5e; */
   color: #444;
   transition: transform 1s;
   &:hover {
@@ -185,7 +185,6 @@ export const Button = styled.button`
 `;
 
 export const StyledLogin = styled.div`
-  /* ... */
   width: 100vw;
   height: 100vh;
   font-family: "Star Jedi";
@@ -219,7 +218,6 @@ export const StyledLogin = styled.div`
 `;
 
 export const EnterButton = styled.button`
-  /* ... */
   padding: 0.5rem 3rem;
   font-size: 2rem;
   font-family: ${(props) => props.font};
@@ -243,7 +241,6 @@ export const EnterButton = styled.button`
 export const StyledDetailModal = styled.section`
   width: 100%;
   height: 100%;
-
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0;
