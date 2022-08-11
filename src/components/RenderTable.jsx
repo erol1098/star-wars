@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { SpinnerCircularFixed } from "spinners-react";
 import useFetchData from "../hooks/useFetchData";
 import { StyledTable } from "./styled-components/scHome";
 import TableItem from "./TableItem";
@@ -41,16 +42,20 @@ const RenderTable = ({ gender, query, side, page }) => {
         </thead>
         <tbody>
           {loading && (
-            <tr>
-              <td colSpan={5}> Loading...</td>
+            <tr colSpan={5} style={{ height: "50vh" }}>
+              <td>
+                <SpinnerCircularFixed />
+              </td>
             </tr>
           )}
           {filtered?.map((char) => (
             <TableItem key={char.created} char={char} onDelete={setItem} />
           ))}
           {!loading && !filtered.length && (
-            <tr>
-              <td colSpan={5}> No item Found!</td>
+            <tr colSpan={5} style={{ height: "50vh" }}>
+              <td>
+                <h2>No item Found!</h2>
+              </td>
             </tr>
           )}
         </tbody>

@@ -54,11 +54,11 @@ const TableItem = ({
         )}
         {loading && <td>Loading...</td>}
         <td>
-          <MdDelete onClick={() => onDelete(name)} className="delete-icon" />
           <BiDetail
             className="detail-icon"
             onClick={() => setShowDetail(true)}
           />
+          <MdDelete onClick={() => onDelete(name)} className="delete-icon" />
         </td>
       </tr>
       {showDetail && <DetailModal detailName={name} onShow={setShowDetail} />}

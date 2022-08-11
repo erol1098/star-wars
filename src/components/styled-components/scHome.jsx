@@ -121,7 +121,7 @@ export const StyledTable = styled.table`
     }
   }
   .detail-icon {
-    color: #d725ec;
+    color: #000;
     font-size: 1.5rem;
     cursor: pointer;
     transition: transform 1s;
@@ -172,11 +172,11 @@ export const StyledSearchBar = styled.form`
 export const Button = styled.button`
   padding: 1rem 0.5rem;
   border-radius: 0.5rem;
-  box-shadow: #4efd5e 0px 0px 5px;
+  box-shadow: #000 0px 0px 5px;
   font-family: "Star Jedi";
   font-size: 0.7rem;
   cursor: pointer;
-  border: 3px solid #4efd5e;
+  /* border: 3px solid #4efd5e; */
   color: #444;
   transition: transform 1s;
   &:hover {
