@@ -8,6 +8,7 @@ const useFetchData = ({ page }) => {
   useEffect(() => {
     (async () => {
       try {
+        setLoading(true);
         const { data } = await axios.get(
           `https://swapi.dev/api/people/?page=${page}`
         );
